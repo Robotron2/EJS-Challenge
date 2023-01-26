@@ -15,7 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
 app.get("/", (req, res) => {
-	res.render("home", { homeStartingContent: homeStartingContent })
+	res.render("home", { homeStartingContentEjs: homeStartingContent })
+})
+
+//about route
+app.get("/about", (req, res) => {
+	res.render("about", { aboutContentEjs: aboutContent })
 })
 
 app.listen(4000, () => {
