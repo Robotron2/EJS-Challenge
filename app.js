@@ -25,10 +25,6 @@ app.get("/", (req, res) => {
 	// console.log(posts)
 })
 
-app.get("/posts/:topic", (req, res) => {
-	console.log(req.params.topic)
-})
-
 //about route
 app.get("/about", (req, res) => {
 	res.render("about", { aboutContentEjs: aboutContent })
@@ -54,6 +50,17 @@ app.post("/compose", (req, res) => {
 	res.redirect("/")
 
 	// console.log(post)
+})
+
+//dynamic routes
+app.get("/posts/:postName", (req, res) => {
+	// console.log(req.params.postName)
+	// console.log(posts)
+	for (let post = 0; post < posts.length; post++) {
+		if (posts[post].title === req.params.postName) {
+			console.log("Match found")
+		}
+	}
 })
 
 app.listen(4000, () => {
