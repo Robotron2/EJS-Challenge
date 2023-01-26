@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
 	// console.log(posts)
 })
 
+app.get("/posts/:topic", (req, res) => {
+	console.log(req.params.topic)
+})
+
 //about route
 app.get("/about", (req, res) => {
 	res.render("about", { aboutContentEjs: aboutContent })
