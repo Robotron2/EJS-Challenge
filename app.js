@@ -37,6 +37,11 @@ app.get("/compose", (req, res) => {
 	res.render("compose")
 })
 
+app.post("/compose", (req, res) => {
+	console.log(req.body.postTitle)
+	res.redirect("/compose")
+})
+
 app.listen(4000, () => {
 	console.log("App is listening on port 4000")
 })
