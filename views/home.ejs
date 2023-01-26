@@ -4,10 +4,14 @@
     <p>
         <%= homeStartingContentEjs %>
     </p>
-    <% for( let i=0; i < posts.length; i++ ) { %>
+
+    <% posts.forEach((post)=>{%>
         <p>
-            <%= posts[i].title %>
+            <%= post.title %>
         </p>
-        <% } %>
+        <%}) %>
+
+
+
 
             <%- include('./partials/footer.ejs') %>
