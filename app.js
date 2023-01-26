@@ -20,8 +20,9 @@ app.use(express.static("public"))
 let posts = []
 
 app.get("/", (req, res) => {
-	res.render("home", { homeStartingContentEjs: homeStartingContent })
-	console.log(posts)
+	// res.render("home", { homeStartingContentEjs: homeStartingContent })
+	res.render("home", { homeStartingContentEjs: homeStartingContent, posts: posts })
+	// console.log(posts)
 })
 
 //about route
