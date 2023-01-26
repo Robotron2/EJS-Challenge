@@ -32,6 +32,11 @@ app.get("/contact", (req, res) => {
 	res.render("contact", { contactContent: contactContent })
 })
 
+//compose route
+app.get("/compose", (req, res) => {
+	res.render("compose")
+})
+
 app.listen(4000, () => {
 	console.log("App is listening on port 4000")
 })
