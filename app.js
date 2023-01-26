@@ -38,8 +38,12 @@ app.get("/compose", (req, res) => {
 })
 
 app.post("/compose", (req, res) => {
-	console.log(req.body.postTitle)
-	res.redirect("/compose")
+	let post = {
+		title: req.body.postTitle,
+		content: req.body.postBody
+	}
+
+	console.log(post)
 })
 
 app.listen(4000, () => {
