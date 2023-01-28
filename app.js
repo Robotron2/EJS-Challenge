@@ -56,11 +56,17 @@ app.post("/compose", (req, res) => {
 app.get("/posts/:postName", (req, res) => {
 	// console.log(req.params.postName)
 	// console.log(posts)
-	for (let post = 0; post < posts.length; post++) {
-		if (posts[post].title === req.params.postName) {
-			console.log("Match found")
+	// for (let post = 0; post < posts.length; post++) {
+
+	// }
+	let requestedTitle = req.params.postName
+	posts.forEach((post) => {
+		let storedTitle = post.title
+
+		if (storedTitle === requestedTitle) {
+			console.log("Match Found")
 		}
-	}
+	})
 })
 
 app.listen(4000, () => {
