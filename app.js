@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const ejs = require("ejs")
+const _ = require("lodash")
 
 const homeStartingContent =
 	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur provident quo nesciunt molestiae omnis distinctio sapiente corporis iste in deleniti iusto unde rerum fuga, tenetur ut, eligendi consectetur. Sit, ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur provident quo nesciunt molestiae omnis distinctio sapiente corporis iste in deleniti iusto unde rerum fuga, tenetur ut, eligendi consectetur. Sit, ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur provident quo nesciunt molestiae omnis distinctio sapiente corporis iste in deleniti iusto unde rerum fuga, tenetur ut, eligendi consectetur. Sit, ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur provident quo nesciunt molestiae omnis distinctio sapiente corporis iste in deleniti iusto unde rerum fuga, tenetur ut, eligendi consectetur. Sit, ea."
@@ -59,9 +60,9 @@ app.get("/posts/:postName", (req, res) => {
 	// for (let post = 0; post < posts.length; post++) {
 
 	// }
-	let requestedTitle = req.params.postName
+	let requestedTitle = _.lowerCase(req.params.postName)
 	posts.forEach((post) => {
-		let storedTitle = post.title
+		let storedTitle = _.lowerCase(post.title)
 
 		if (storedTitle === requestedTitle) {
 			console.log("Match Found")
