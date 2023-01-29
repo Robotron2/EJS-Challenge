@@ -65,7 +65,7 @@ app.get("/posts/:postName", (req, res) => {
 		let storedTitle = _.lowerCase(post.title)
 
 		if (storedTitle === requestedTitle) {
-			console.log("Match Found")
+			res.render("post", { postTitle: post.title, postContent: post.content })
 		}
 	})
 })
